@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures padding and margin don't affect element size */
+}
+
+body {
+  background: linear-gradient(to right, #1d2b64, #f8cdda);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center the container vertically and horizontally */
+  position: relative; /* Allows for absolute positioning of the logo */
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Make sure it spans the full width */
+  height: 100%; /* Make sure it spans the full height */
+  padding: 20px; /* Add some padding around the edges */
+  flex-direction: column;
+  text-align: center;
+  position: relative; /* Allows for absolute positioning inside */
+}
+
+.logo-container {
+  position: absolute; /* Position logo outside the wrapper */
+  top: 100px; /* Adjust this to move it to the top of the container */
+  left: 20px; /* Adjust this to move it to the left side */
+  transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth animation for logo */
+}
+
+.logo {
+  width: 70px;
+  padding-left: 5px;
+  transition: transform 1.5s ease, width 1.5s ease; /* Smooth animation for logo scaling */
+}
+
+/* Shrink and move logo when the link is generated */
+.shrink-logo .logo {
+  transform: translateY(0px); /* Moves logo upward */
+  width: 70px; /* Shrinks the logo */
+  position: absolute; /* Ensure it stays in place during animation */
+}
+
+.wrapper {
+  background-color: rgba(255, 255, 255, 0.9); /* Light background for contrast */
+  width: 600px;
+  max-width: 100%; /* Allow it to be responsive */
+  height: auto;
+  padding: 20px; /* Added more padding for better spacing */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Added shadow */
+  text-align: center;
+  margin-top: 80px; /* Give space for logo at the top */
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 600;
+  color: #445A6F;
+  margin: 40px 0;
+}
+
+button {
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: #1e79cf;
+  border: 1px solid #1e79cf;
+  color: #fff;
+  font-size: 20px;
+  margin: 20px 0; /* Adjusted margin for spacing */
+  cursor: pointer; /* Change cursor on hover */
+  transition: background-color 1.3s; /* Smooth background change */
+}
+
+button:hover {
+  background-color: #3a4d58; /* Darker shade on hover */
+}
+
+a {
+  display: block;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #445A6F;
+  text-decoration: none;
+}
+
+.qr-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.qr-container svg {
+  max-width: 100%;
+  height: auto; /* Make QR code responsive */
+  margin-top: 10px; /* Space between QR code and other content */
+}
+
+/* Add Media Queries for responsiveness */
+
+/* Tablet view */
+@media (max-width: 768px) {
+  body {
+    height: auto;
+    padding: 15px;
+  }
+
+  .container {
+    padding: 15px;
+  }
+
+  .wrapper {
+    width: 90%; /* More flexible width */
+    padding: 20px;
+  }
+
+  .logo {
+    width: 60px; /* Reduce logo size on tablets */
+  }
+
+  h1 {
+    font-size: 30px; /* Smaller heading on tablets */
+  }
+
+  button {
+    width: 120px; /* Smaller button on tablets */
+    font-size: 16px;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 480px) {
+  body {
+    height: auto;
+    padding: 10px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .wrapper {
+    width: 95%; /* Even more flexible width */
+    padding: 15px;
+  }
+
+  .logo {
+    width: 50px; /* Shrink logo even more on mobile */
+  }
+
+  h1 {
+    font-size: 24px; /* Smaller heading on mobile */
+  }
+
+  button {
+    width: 100px; /* Smaller button on mobile */
+    font-size: 14px;
+  }
+
+  .qr-container {
+    margin-top: 10px;
+  }
+}
